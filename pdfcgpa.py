@@ -1,7 +1,9 @@
 #this cgpa system was implemented based on a 7point scale.
 #you can edit the grading and rank functions to suit your choice
 from fpdf import FPDF
-        
+import os
+
+save_path = os.getcwd()
 def CGPA(N):
     course=[] #course array
     scores=[] #scores array
@@ -90,7 +92,7 @@ def CGPA(N):
         pdf.cell(200,10,txt="Total Unit Taken: {} ".format(totalUnit) ,ln=1) #correct
         pdf.cell(200,10,txt="Total Weighted Grade Point: {} ".format(totalwgp),ln=1) #correct
         pdf.cell(200,10,txt="Rank of Class Awarded: {} ".format(Rank(classRank)),ln=1) #correct
-        pdf.output('/home/akinkunmi/Documents/myResult.pdf') #your saved location path in full
+        pdf.output('{}/res'.format(save_path)) 
    
 
         
